@@ -1,3 +1,16 @@
 #letter {
   display: none;
+  border: 2px solid black;
+  padding: 5%;
+  font-size: 20px;
+  font-family: cursive;
+}
+
+#blanks {
+  padding: 10%;
+}
+
+.jumbotron {
+  text-align: center;
+  background: #99ff99;
 }
