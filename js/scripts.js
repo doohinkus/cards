@@ -1,22 +1,21 @@
-var sentenceArray = [];
-var bigWords = [];
+var suits =["clubs", "diamonds", "spaces", "hearts"];
+var faceValue =["ace", 2, 3, 4, 5, 6, 7, 8, 9, 10, "jack", "queen", "king"];
+var cards = [];
 
-
-
+suits.forEach(function(suits){
+  faceValue.forEach(function (value){
+    cards.push(value + " of " + suits);
+  });
+});
 
 
 $(document).ready(function() {
   $("form").submit(function(event) {
-  sentenceArray = $("#sentence").val().split(" ");
-  bigWords = sentenceArray.map(function (word){
-   var wordLength = word.length;
-   if(wordLength >= 3){
-     return word;
-   }
-  }).reverse().join(" ");
 
-
-    $("#result").text(bigWords).fadeIn();
+     cards.forEach(function (card){
+       $("ul").append("<li>" + card + "</li>");
+     });
+     $("#result").fadeIn();
     event.preventDefault();
   });
 });
