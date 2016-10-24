@@ -1,25 +1,22 @@
+var sentenceArray = [];
+var bigWords = [];
+
+
+
+
+
 $(document).ready(function() {
-  $("form.form-inline").submit(function(event) {
+  $("form").submit(function(event) {
+  sentenceArray = $("#sentence").val().split(" ");
+  bigWords = sentenceArray.map(function (word){
+   var wordLength = word.length;
+   if(wordLength >= 3){
+     return word;
+   }
+  }).reverse().join(" ");
 
-   var inputs =["item1", "item2", "item3"];
-   var list = [];
 
-console.log($("#item1").val());
-   inputs.forEach(function(input) {
-     var value = $("#"+input).val();
-     list.push(value);
-     console.log(value);
-   });
-   var upperCaseList = list.map(function(item){
-     return item.toUpperCase();
-   });
-   upperCaseList = upperCaseList.sort();
-   console.log(upperCaseList);
-   upperCaseList.forEach(function (listItem){
-     $("ul").append("<li>" + listItem + "</li>");
-   });
-
-    $("#finallist").show();
+    $("#result").text(bigWords).fadeIn();
     event.preventDefault();
   });
 });

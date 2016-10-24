@@ -1,9 +1,8 @@
-#finallist {
+#result {
   display: none;
-  border: 2px solid black;
   padding: 5%;
   font-size: 20px;
-  font-family: cursive;
+
 }
 
 #blanks {
@@ -12,5 +11,7 @@
 
 .jumbotron {
   text-align: center;
-  background: #99ff99;
+}
+.centered{
+    text-align: center;
 }
