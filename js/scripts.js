@@ -1,7 +1,11 @@
 $(document).ready(function() {
   $("#blanks form").submit(function(event) {
-    var name1Input = $("input#name1").val();
-    $(".name1").text(name1Input);
+   var inputs =["name", "adjective", "noun"];
+
+   inputs.forEach(function(input) {
+     var value = $("#"+input).val();
+     $("."+input).text(value);
+   })
     $("#letter").show();
     event.preventDefault();
   });
